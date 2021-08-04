@@ -16,4 +16,4 @@ For example,
 For input [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15], you should return [10, -65].alse, false, true,  true
 ```
 
-You can find this Kata by [link](https://www.codewars.com/kata/576bb71bbbcf0951d5000044/train/scala)
+You can find this SquareNSum by [link](https://www.codewars.com/kata/576bb71bbbcf0951d5000044/train/scala)

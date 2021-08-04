@@ -29,4 +29,4 @@ there are 10 matches in the championship
 0 <= y <= 4
 ```
 
-You can find this Kata by [link](https://www.codewars.com/kata/5bb904724c47249b10000131/train/scala)
+You can find this SquareNSum by [link](https://www.codewars.com/kata/5bb904724c47249b10000131/train/scala)

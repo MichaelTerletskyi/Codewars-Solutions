@@ -17,4 +17,4 @@ Note: Use "" instead of '' in C++.
 
 
 
-You can find this Kata by [link](https://www.codewars.com/kata/58649884a1659ed6cb000072/train/java)
+You can find this SquareNSum by [link](https://www.codewars.com/kata/58649884a1659ed6cb000072/train/java)

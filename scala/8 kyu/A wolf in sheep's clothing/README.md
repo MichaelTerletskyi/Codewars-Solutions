@@ -34,4 +34,4 @@ Input: ["sheep", "sheep", "wolf"]
 Output: "Pls go away and stop eating my sheep"
 ```
 
-You can find this Kata by [link](https://www.codewars.com/kata/5c8bfa44b9d1192e1ebd3d15/train/scala)
+You can find this SquareNSum by [link](https://www.codewars.com/kata/5c8bfa44b9d1192e1ebd3d15/train/scala)

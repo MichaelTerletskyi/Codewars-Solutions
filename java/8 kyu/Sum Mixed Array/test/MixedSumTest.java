@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 import static org.junit.Assert.assertEquals;
 
-public class SolutionTest3 {
+public class MixedSumTest {
     MixedSum mixedSum = new MixedSum();
 
     @Test

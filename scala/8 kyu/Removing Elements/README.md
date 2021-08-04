@@ -17,4 +17,4 @@ Example:
 
 None of the arrays will be empty, so you don't have to worry about that!
 
-You can find this Kata by [link](https://www.codewars.com/kata/5769b3802ae6f8e4890009d2/train/scala)
+You can find this SquareNSum by [link](https://www.codewars.com/kata/5769b3802ae6f8e4890009d2/train/scala)

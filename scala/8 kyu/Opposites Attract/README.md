@@ -14,4 +14,4 @@ If one of the flowers has an even number of petals and the other has an odd numb
 Write a function that will take the number of petals of each flower and return true if they are in love and false if they aren't.
 ```
 
-You can find this Kata by [link](https://www.codewars.com/kata/555086d53eac039a2a000083/train/scala)
+You can find this SquareNSum by [link](https://www.codewars.com/kata/555086d53eac039a2a000083/train/scala)

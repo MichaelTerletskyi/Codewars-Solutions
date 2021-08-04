@@ -17,4 +17,4 @@ Examples:
 999 --> "999"
 ```
 
-You can find this Kata by [link](https://www.codewars.com/kata/5265326f5fda8eb1160004c8/train/scala)
+You can find this SquareNSum by [link](https://www.codewars.com/kata/5265326f5fda8eb1160004c8/train/scala)

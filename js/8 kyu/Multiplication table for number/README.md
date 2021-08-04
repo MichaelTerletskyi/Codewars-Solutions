@@ -24,4 +24,4 @@ For example, a multiplication table (string) for number == 5 looks like below:
 10 * 5 = 50
 ```
 
-You can find this Kata by [link](https://www.codewars.com/kata/5a2fd38b55519ed98f0000ce/train/javascript)
+You can find this SquareNSum by [link](https://www.codewars.com/kata/5a2fd38b55519ed98f0000ce/train/javascript)

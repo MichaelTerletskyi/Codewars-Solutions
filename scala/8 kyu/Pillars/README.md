@@ -18,4 +18,4 @@ Example:
 
 Calculate the distance between the first and the last pillar in centimeters (without the width of the first and last pillar).
 
-You can find this Kata by [link](https://www.codewars.com/kata/5bb0c58f484fcd170700063d/train/scala)
+You can find this SquareNSum by [link](https://www.codewars.com/kata/5bb0c58f484fcd170700063d/train/scala)

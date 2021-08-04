@@ -15,4 +15,4 @@ Example:
 ```
 
 
-You can find this Kata by [link](https://www.codewars.com/kata/5583090cbe83f4fd8c000051/train/java)
+You can find this SquareNSum by [link](https://www.codewars.com/kata/5583090cbe83f4fd8c000051/train/java)

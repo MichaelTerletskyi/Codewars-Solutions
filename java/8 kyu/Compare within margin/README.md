@@ -42,4 +42,4 @@ This is because the distance between a and b is greater than 0, and a is less th
 
 
 
-You can find this Kata by [link](https://www.codewars.com/kata/56453a12fcee9a6c4700009c/train/java)
+You can find this SquareNSum by [link](https://www.codewars.com/kata/56453a12fcee9a6c4700009c/train/java)

@@ -4,7 +4,7 @@ import java.util.Arrays;
  * @Create 7/17/2021
  */
 
-public class Kata {
+public class SquareNSum {
 
     // Best solution in my opinion, like a Pro. Just using streams
     public static int squareSum(int[] n) {

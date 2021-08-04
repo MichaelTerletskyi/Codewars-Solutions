@@ -58,4 +58,4 @@ Constraints: 1 ≤ row ≤ nRows.
 The number of people who sit strictly behind you and in your column or to the left.
 
 
-You can find this Kata by [link](https://www.codewars.com/kata/588417e576933b0ec9000045/train/scala)
+You can find this SquareNSum by [link](https://www.codewars.com/kata/588417e576933b0ec9000045/train/scala)

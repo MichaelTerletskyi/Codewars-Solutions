@@ -16,4 +16,4 @@ current age of his son (years)
 
 Сalculate how many years ago the father was twice as old as his son (or in how many years he will be twice as old).
 
-You can find this Kata by [link](https://www.codewars.com/kata/5b853229cfde412a470000d0/train/scala)
+You can find this SquareNSum by [link](https://www.codewars.com/kata/5b853229cfde412a470000d0/train/scala)

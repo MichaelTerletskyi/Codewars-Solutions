@@ -14,4 +14,4 @@ StringRepeat.repeatStr(6, "I") # "IIIIII"
 StringRepeat.repeatStr(5, "Hello") # "HelloHelloHelloHelloHello"
 ```
 
-You can find this Kata by [link](https://www.codewars.com/kata/57a0e5c372292dd76d000d7e/train/scala)
+You can find this SquareNSum by [link](https://www.codewars.com/kata/57a0e5c372292dd76d000d7e/train/scala)

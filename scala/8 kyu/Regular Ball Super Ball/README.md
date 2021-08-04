@@ -20,4 +20,4 @@ ball2.ballType     //=> "super"
 ```
 
 
-You can find this Kata by [link](https://www.codewars.com/kata/53f0f358b9cb376eca001079/train/scala)
+You can find this SquareNSum by [link](https://www.codewars.com/kata/53f0f358b9cb376eca001079/train/scala)

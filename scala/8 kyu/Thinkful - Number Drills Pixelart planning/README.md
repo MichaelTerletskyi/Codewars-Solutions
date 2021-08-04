@@ -29,4 +29,4 @@ equals_three(3)
 True
 ```
 
-You can find this Kata by [link](https://www.codewars.com/kata/58630e2ae88af44d2b0000ea/train/scala)
+You can find this SquareNSum by [link](https://www.codewars.com/kata/58630e2ae88af44d2b0000ea/train/scala)

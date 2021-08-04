@@ -23,4 +23,4 @@ Zero (0) is not checked for any specific sign. Negative zeros make no mathematic
 ```
 
 
-You can find this Kata by [link](https://www.codewars.com/kata/55685cd7ad70877c23000102/train/scala)
+You can find this SquareNSum by [link](https://www.codewars.com/kata/55685cd7ad70877c23000102/train/scala)

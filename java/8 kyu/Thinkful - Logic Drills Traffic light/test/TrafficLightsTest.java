@@ -2,7 +2,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class SolutionTest6 {
+public class TrafficLightsTest {
     @Test
     public void update_light() {
         assertEquals("green", TrafficLights.updateLight("red"));

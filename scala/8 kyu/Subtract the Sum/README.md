@@ -134,4 +134,4 @@ There is no preloaded code to help you. This is not about coding skills; think b
 ```
 
 
-You can find this Kata by [link](https://www.codewars.com/kata/56c5847f27be2c3db20009c3/train/scala)
+You can find this SquareNSum by [link](https://www.codewars.com/kata/56c5847f27be2c3db20009c3/train/scala)

@@ -18,4 +18,4 @@ Examples:
 4) n =  12, x = 7, y = 5 => false because  12 is neither divisible by 7 nor 5
 ```
 
-You can find this Kata by [link](https://www.codewars.com/kata/5545f109004975ea66000086/train/scala)
+You can find this SquareNSum by [link](https://www.codewars.com/kata/5545f109004975ea66000086/train/scala)

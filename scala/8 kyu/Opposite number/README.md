@@ -17,4 +17,4 @@ Examples:
 -34: 34
 ```
 
-You can find this Kata by [link](https://www.codewars.com/kata/56dec885c54a926dcd001095/train/scala)
+You can find this SquareNSum by [link](https://www.codewars.com/kata/56dec885c54a926dcd001095/train/scala)

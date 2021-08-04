@@ -1,4 +1,4 @@
-public class Kata5 {
+public class HolidayEightDutyFree {
 
     // Mo solution
     public static int dutyFree(int normPrice, int discount, int hol) {

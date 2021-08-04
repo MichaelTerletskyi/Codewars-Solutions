@@ -25,4 +25,4 @@ Array(
 The correct answer would be 17.
 Hint: Don't forget to check for bad values like null/undefined
 
-You can find this Kata by [link](https://www.codewars.com/kata/54edbc7200b811e956000556/train/scala)
+You can find this SquareNSum by [link](https://www.codewars.com/kata/54edbc7200b811e956000556/train/scala)

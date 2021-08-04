@@ -18,4 +18,4 @@ Notes
 String str will never be null.
 
 
-You can find this Kata by [link](https://www.codewars.com/kata/596c6eb85b0f515834000049/train/java)
+You can find this SquareNSum by [link](https://www.codewars.com/kata/596c6eb85b0f515834000049/train/java)

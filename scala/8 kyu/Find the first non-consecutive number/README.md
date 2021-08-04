@@ -19,7 +19,7 @@ The array will always have at least 2 elements1 and all elements will be numbers
 The numbers will also all be unique and in ascending order.
 The numbers could be positive or negative and the first non-consecutive could be either too!
 
-If you like this Kata, maybe try this one next: [link](https://www.codewars.com/kata/represent-array-of-numbers-as-ranges)
+If you like this SquareNSum, maybe try this one next: [link](https://www.codewars.com/kata/represent-array-of-numbers-as-ranges)
 
 ```yaml
 1 Can you write a solution that will return null2 for both [] and [ x ] though? 
@@ -35,4 +35,4 @@ Julia: nothing
 Nim: none(int)
 ```
 
-You can find this Kata by [link](https://www.codewars.com/kata/58f8a3a27a5c28d92e000144/train/scala)
+You can find this SquareNSum by [link](https://www.codewars.com/kata/58f8a3a27a5c28d92e000144/train/scala)

@@ -14,4 +14,4 @@ For example:
 
 For the beginner, try to use the map method - it comes in very handy quite a lot so is a good one to know.
 
-You can find this Kata by [link](https://www.codewars.com/kata/57f781872e3d8ca2a000007e/train/scala)
+You can find this SquareNSum by [link](https://www.codewars.com/kata/57f781872e3d8ca2a000007e/train/scala)

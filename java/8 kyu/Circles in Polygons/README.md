@@ -15,4 +15,4 @@ As a result you decide to add this information on your boxes: The largest (diame
 
 
 
-You can find this Kata by [link](https://www.codewars.com/kata/5a026a9cffe75fbace00007f/train/java)
+You can find this SquareNSum by [link](https://www.codewars.com/kata/5a026a9cffe75fbace00007f/train/java)

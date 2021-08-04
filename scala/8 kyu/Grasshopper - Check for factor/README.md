@@ -25,4 +25,4 @@ For example 2 is not a factor of 7 because: 7 % 2 = 1
 
 Note: base is a non-negative number, factor is a positive number.
 
-You can find this Kata by [link](https://www.codewars.com/kata/55cbc3586671f6aa070000fb/train/scala)
+You can find this SquareNSum by [link](https://www.codewars.com/kata/55cbc3586671f6aa070000fb/train/scala)

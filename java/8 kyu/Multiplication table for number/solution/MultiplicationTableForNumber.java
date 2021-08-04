@@ -1,4 +1,4 @@
-class Kata6 {
+class MultiplicationTableForNumber {
     public static String multiTable(int num) {
         StringBuilder sb = new StringBuilder();
         for (int i = 1; i < 11; i++) {

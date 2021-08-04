@@ -2,7 +2,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class SolutionTests7 {
+public class DinglemouseTest {
 
     @Test
     public void testSomeDots() {

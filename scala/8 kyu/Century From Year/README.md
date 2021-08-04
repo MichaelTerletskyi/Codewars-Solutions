@@ -23,4 +23,4 @@ Hope you enjoy it .. Awaiting for Best Practice Codes
 
 Enjoy Learning !!!
 
-You can find this Kata by [link](https://www.codewars.com/kata/5a3fe3dde1ce0e8ed6000097/train/scala)
+You can find this SquareNSum by [link](https://www.codewars.com/kata/5a3fe3dde1ce0e8ed6000097/train/scala)

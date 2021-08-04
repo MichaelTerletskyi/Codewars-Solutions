@@ -20,4 +20,4 @@ Example (Input --> Output ):
 8 -> "Neptune"
 ```
 
-You can find this Kata by [link](https://www.codewars.com/kata/515e188a311df01cba000003/train/scala)
+You can find this SquareNSum by [link](https://www.codewars.com/kata/515e188a311df01cba000003/train/scala)
