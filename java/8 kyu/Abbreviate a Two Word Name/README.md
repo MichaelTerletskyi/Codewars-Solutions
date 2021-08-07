@@ -15,6 +15,6 @@ It should look like this:
 Sam Harris => S.H
 
 Patrick Feeney => P.F
-```AbbreviateTwoWords
+```
 
-You can find this Kata by [link](https://www.codewars.com/kata/5ab6538b379d20ad880000ab/train/java)
+You can find this Kata by [link](https://www.codewars.com/kata/57eadb7ecd143f4c9c0000a3/train/java)
