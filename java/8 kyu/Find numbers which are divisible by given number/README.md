@@ -1,0 +1,17 @@
+# Find numbers which are divisible by given number
+
+```yaml
+Level : 8 kyu
+```
+
+# Instructions
+
+Complete the function which takes two arguments and returns all numbers which are divisible by the given divisor.
+First argument is an array of numbers and the second is the divisor.
+
+Example:
+```yaml
+divisibleBy([1, 2, 3, 4, 5, 6], 2) == [2, 4, 6]
+```
+
+You can find this Kata [link](https://www.codewars.com/kata/55edaba99da3a9c84000003b/train/java)
