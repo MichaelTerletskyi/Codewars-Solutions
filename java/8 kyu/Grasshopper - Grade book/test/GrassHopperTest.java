@@ -3,6 +3,7 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 public class GrassHopperTest {
+
     @Test
     public void test1() {
         assertEquals('A', GrassHopper.getGrade(95, 90, 93));
