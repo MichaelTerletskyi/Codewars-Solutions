@@ -10,7 +10,7 @@ public class FindThePosition {
         return String.format("%s: %s", "Position of alphabet", String.valueOf(position));
     }
 
-//    Best Soltuion
+//    Best Solution
 //    public static String position(char alphabet) {
 //        return "Position of alphabet: " + (alphabet - '`');
 //    }
