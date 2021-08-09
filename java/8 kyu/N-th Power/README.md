@@ -15,8 +15,6 @@ Let's look at a few examples:
 ```yaml
 array = [1, 2, 3, 4] and N = 2, then the result is 3^2 == 9;
 array = [1, 2, 3] and N = 3, but N is outside of the array, so the result is -1.
-
 ```
-
 
 You can find this Kata by [link](https://www.codewars.com/kata/57d814e4950d8489720008db/train/java)
