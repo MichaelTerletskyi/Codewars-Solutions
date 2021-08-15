@@ -1,4 +1,4 @@
-# Triple Trouble
+# Tip Calculator
 
 ```yaml
 Level : 8 kyu
@@ -24,4 +24,4 @@ The rating is case insensitive (so "great" = "GREAT"). If an unrecognised rating
 - ...or -1 in C#
 Because you're a nice person, you always round up the tip, regardless of the service.
 
-You can find this Kata [link](https://www.codewars.com/kata/5704aea738428f4d30000914/train/java)
+You can find this Kata [link](https://www.codewars.com/kata/56598d8076ee7a0759000087/train/java)
