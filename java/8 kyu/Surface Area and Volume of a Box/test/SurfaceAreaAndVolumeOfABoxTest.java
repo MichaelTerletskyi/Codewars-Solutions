@@ -3,6 +3,7 @@ import org.junit.Test;
 import static org.junit.Assert.assertArrayEquals;
 
 public class SurfaceAreaAndVolumeOfABoxTest {
+
     @Test
     public void test1() {
         SurfaceAreaAndVolumeOfABox k = new SurfaceAreaAndVolumeOfABox();
