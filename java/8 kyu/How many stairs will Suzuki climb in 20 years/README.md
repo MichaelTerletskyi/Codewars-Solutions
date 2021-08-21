@@ -31,9 +31,13 @@ Your function should return the 20 year estimate of the stairs climbed using the
 Please also try the other Kata in this series..
 
 [Help Suzuki count his vegetables...](https://www.codewars.com/kata/56ff1667cc08cacf4b00171b)
+
 [Help Suzuki purchase his Tofu!](https://www.codewars.com/kata/57d4ecb8164a67b97c00003c)
+
 [Help Suzuki pack his coal basket!](https://www.codewars.com/kata/57f09d0bcedb892791000255)
+
 [Help Suzuki rake his garden!](https://www.codewars.com/kata/571c1e847beb0a8f8900153d)
+
 [Suzuki needs help lining up his students!](https://www.codewars.com/kata/5701800886306a876a001031)
 
 You can find this Kata [link](https://www.codewars.com/kata/56fc55cd1f5a93d68a001d4e/train/java)
