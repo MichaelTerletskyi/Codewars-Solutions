@@ -15,5 +15,10 @@ Example:
 sayHello(new String[]{"John", "Smith"}, "Phoenix", "Arizona")
 ```
 
+This example will return the string :
+
+```yaml
+"Hello, John Smith! Welcome to Phoenix, Arizona!"
+```
 
 You can find this Kata by [link](https://www.codewars.com/kata/5302d846be2a9189af0001e4/train/java)
