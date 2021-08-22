@@ -10,8 +10,8 @@ public class ForceOfGravity {
                 unitMass.equals("μg") ? 1e-9 : unitMass.equals("lb") ? 0.453592D : 1D;
     }
 
-    public static double convertUnitDistance(String distanceMass) {
-        return distanceMass.equals("cm") ? 1e-2 : distanceMass.equals("mm") ? 1e-3 :
-                distanceMass.equals("μm") ? 1e-6 : distanceMass.equals("ft") ? 0.3048D : 1D;
+    public static double convertUnitDistance(String unitDistance) {
+        return unitDistance.equals("cm") ? 1e-2 : unitDistance.equals("mm") ? 1e-3 :
+                unitDistance.equals("μm") ? 1e-6 : unitDistance.equals("ft") ? 0.3048D : 1D;
     }
 }
