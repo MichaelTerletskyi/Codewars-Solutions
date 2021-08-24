@@ -17,7 +17,7 @@ Training practical algorithmic skills, preparing for tech interview at FAANG and
 
 ### Languages
 
-- [Java](https://github.com/MichaelTerletskyi/Codewars-Solutions/tree/main/java)
+- [Java](https://github.com/MichaelTerletskyi/Codewars-Solutions/blob/main/java/JAVA_MAP.md)
 
 ### Author
 

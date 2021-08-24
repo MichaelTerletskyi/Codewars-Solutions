@@ -1,4 +1,4 @@
-- []()
+- [101 Dalmatians - squash the bugs, not the dogs!](https://github.com/MichaelTerletskyi/Codewars-Solutions/tree/main/java/8%20kyu/101%20Dalmatians%20-%20squash%20the%20bugs%2C%20not%20the%20dogs!)
 
 * []()
 
