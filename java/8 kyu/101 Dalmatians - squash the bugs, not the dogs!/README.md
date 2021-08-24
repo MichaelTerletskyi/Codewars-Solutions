@@ -18,4 +18,4 @@ Good luck!
 ```
 
 
-You can find this SquareNSum by [link](https://www.codewars.com/kata/56f6919a6b88de18ff000b36/train/java)
+You can find this Kata by [link](https://www.codewars.com/kata/56f6919a6b88de18ff000b36/train/java)
