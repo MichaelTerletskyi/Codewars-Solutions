@@ -2,13 +2,6 @@
 
 This is my code solutions form [codewars.com](https://www.codewars.com/)
 
-### Table of Contents
-
-
-- [Purpose](#Purpose)
-- [Languages](#Languages)
-- [Author](#Author)
-
 ### Purpose
 
 ```yaml
