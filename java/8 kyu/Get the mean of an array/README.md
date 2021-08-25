@@ -17,4 +17,4 @@ The array will never be empty.
 
 
 
-You can find this SquareNSum by [link](https://www.codewars.com/kata/563e320cee5dddcf77000158/train/java)
+You can find this Kata by [link](https://www.codewars.com/kata/563e320cee5dddcf77000158/train/java)

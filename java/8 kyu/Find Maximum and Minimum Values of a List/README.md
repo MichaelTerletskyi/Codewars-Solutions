@@ -17,4 +17,4 @@ max({5}) returns 5
 min({42, 54, 65, 87, 0}) returns 0
 ```
 
-You can find this SquareNSum by [link](https://www.codewars.com/kata/577a98a6ae28071780000989/train/java)
+You can find this Kata by [link](https://www.codewars.com/kata/577a98a6ae28071780000989/train/java)

@@ -14,4 +14,4 @@ If there are no good ideas, as is often the case, return 'Fail!'.
 
 
 
-You can find this SquareNSum by [link](https://www.codewars.com/kata/57f222ce69e09c3630000212/train/java)
+You can find this Kata by [link](https://www.codewars.com/kata/57f222ce69e09c3630000212/train/java)

@@ -1,5 +1,4 @@
-# 
-Pythagorean Triple
+# Pythagorean Triple
 
 ```yaml
 Level : 8 kyu

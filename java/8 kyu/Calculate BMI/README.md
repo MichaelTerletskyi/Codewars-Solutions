@@ -19,4 +19,4 @@ if bmi <= 30.0 return "Overweight"
 if bmi > 30 return "Obese"
 ```
 
-You can find this SquareNSum by [link](https://www.codewars.com/kata/57a429e253ba3381850000fb/train/java)
+You can find this Kata by [link](https://www.codewars.com/kata/57a429e253ba3381850000fb/train/java)

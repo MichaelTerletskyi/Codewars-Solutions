@@ -1,4 +1,4 @@
-# Welcome! ?
+# Welcome!
 
 ```yaml
 Level : 8 kyu

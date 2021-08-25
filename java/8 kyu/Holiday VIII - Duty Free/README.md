@@ -23,4 +23,4 @@ You can buy 166 bottles, thats will be costs 996 and you hol (Budget) only 100
 ```
 
 
-You can find this SquareNSum by [link](https://www.codewars.com/kata/57e92e91b63b6cbac20001e5/train/java)
+You can find this Kata by [link](https://www.codewars.com/kata/57e92e91b63b6cbac20001e5/train/java)

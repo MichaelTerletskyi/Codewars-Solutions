@@ -15,7 +15,7 @@ This is my code solutions form [codewars.com](https://www.codewars.com/)
 Training practical algorithmic skills, preparing for tech interview at FAANG and other...
 ```
 
-### Languages
+### Languages Map (click)
 
 - [Java](https://github.com/MichaelTerletskyi/Codewars-Solutions/blob/main/java/JAVA_MAP.md)
 

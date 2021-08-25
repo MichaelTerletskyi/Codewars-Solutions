@@ -13,4 +13,4 @@ The returned value must be a string, and have "***" between each of its letters.
 
 You should not remove or add elements from/to the array.
 
-You can find this SquareNSum by [link](https://www.codewars.com/kata/57cfdf34902f6ba3d300001e/train/java)
+You can find this Kata by [link](https://www.codewars.com/kata/57cfdf34902f6ba3d300001e/train/java)
