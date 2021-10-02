@@ -1,1 +1,1 @@
-- [8 kyu]()
+- [8 kyu](https://github.com/MichaelTerletskyi/Codewars-Solutions/blob/main/scala/8%20kyu/8_KYU_MAP.md)
