@@ -1,7 +1,7 @@
 # Is this a triangle ?
 
 ```yaml
-Level : 8 kyu
+Level : 7 kyu
 ```
 
 # Instructions

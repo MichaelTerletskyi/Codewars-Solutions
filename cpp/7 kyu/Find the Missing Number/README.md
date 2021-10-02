@@ -1,7 +1,7 @@
 # Find the Missing Number
 
 ```yaml
-Level : 8 kyu
+Level : 7 kyu
 ```
 
 # Instructions
