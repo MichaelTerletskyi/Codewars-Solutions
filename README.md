@@ -14,7 +14,7 @@ Training practical algorithmic skills, preparing for tech interview at FAANG and
 
 - [Scala](https://github.com/MichaelTerletskyi/Codewars-Solutions/blob/main/scala/SCALA_MAP.md)
 
-- [JavaScript](https://github.com/MichaelTerletskyi/Codewars-Solutions/blob/main/scala/SCALA_MAP.md)
+- [JavaScript](https://github.com/MichaelTerletskyi/Codewars-Solutions/blob/main/js/JAVA_SCRIPT_MAP.md)
 
 ### Author
 
