@@ -25,3 +25,5 @@ hs_err_pid*
 Codewars-Solutions.iml
 .idea
 out
+java.iml
+target
