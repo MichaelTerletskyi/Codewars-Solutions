@@ -1,0 +1,1 @@
+const remainder = (a, b) => Math.max(a, b) % Math.min(a, b);
