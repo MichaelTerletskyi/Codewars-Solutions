@@ -1,0 +1,1 @@
+const getRealFloor = floor => (floor > 13 ? floor - 2 : (floor > 0 ? floor - 1 : floor));
