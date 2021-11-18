@@ -15,3 +15,5 @@ Make a function that will return a greeting statement that uses an input; your p
 [Make sure you type the exact thing I wrote or the program may not execute properly]
 
 Scala kata [link](https://www.codewars.com/kata/55a70521798b14d4750000a4/train/scala)
+
+Java kata [link](https://www.codewars.com/kata/55a70521798b14d4750000a4/train/java)
