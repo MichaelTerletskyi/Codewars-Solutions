@@ -1,7 +1,7 @@
 # Who likes it?
 
 ```yaml
-Level : 7 kyu
+Level : 6 kyu
 ```
 
 # Instructions
