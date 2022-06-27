@@ -5,11 +5,11 @@ public class HowManyNumbers {
 
     public static List<Long> findAll(final int sumDigits, final int numDigits) {
         possibleNumbersCounter = 0; min = 0; max = 0;
-        recursiveSearch(0L, 1, sumDigits, numDigits);
+        search(0L, 1, sumDigits, numDigits);
         return possibleNumbersCounter > 0 ? List.of(possibleNumbersCounter, min, max) : List.of();
     }
 
-    private static void recursiveSearch(Long currentNumber, int previousDigit, int sumLeft, int digitsLeft) {
+    private static void search(Long currentNumber, int previousDigit, int sumLeft, int digitsLeft) {
         if (sumLeft == 0 && digitsLeft == 0) {
             if (possibleNumbersCounter == 0) {
                 min = currentNumber;
@@ -19,7 +19,7 @@ public class HowManyNumbers {
             ++possibleNumbersCounter;
         } else if (digitsLeft != 0) {
             for (int i = previousDigit; i < 10; i++) {
-                recursiveSearch(10 * currentNumber + i, i, sumLeft - i, digitsLeft - 1);
+                search(10 * currentNumber + i, i, sumLeft - i, digitsLeft - 1);
             }
         }
     }
@@ -96,15 +96,4 @@ public class HowManyNumbers {
 //        }
 //        return number;
 //    }
-
-    public static void main(String[] args) {
-        System.out.println(findAll(10, 3)); // 8 :: 118, 127, 136, 145, 226, 235, 244, 334
-        System.out.println("\n");
-        System.out.println(findAll(27, 3)); // 1:: 999, 999
-        System.out.println("\n");
-        System.out.println(findAll(84, 4)); // []
-        System.out.println("\n");
-        System.out.println(findAll(35, 6)); // 123L :: 116999, 566666
-        System.out.println("\n");
-    }
 }

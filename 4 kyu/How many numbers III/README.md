@@ -58,4 +58,4 @@ Features of the random tests:
 - Sum of digits value between 20 and 65
 - Amount of digits between 2 and 17
 
-Java kata [link](https://www.codewars.com/kata/5877e7d568909e5ff90017e6/train/java)
+Java kata [link](https://www.codewars.com/kata/5877e7d568909e5ff90017e6/train/java) 
