@@ -1,5 +1,6 @@
+import scala.Int;
+
 import java.util.*;
-import java.util.concurrent.atomic.AtomicInteger;
 
 public class Dinglemouse {
     private static final char MOUNTAIN = '^';
@@ -7,106 +8,149 @@ public class Dinglemouse {
     private static final char WATER = '-';
 
     public static int[] dryGround(char[][] terrain) {
+        preFillingAlongContours(terrain);
         List<Integer> days = new ArrayList<>();
-        int[] start = cellCount(terrain);
-        int landCounter = start[0] - start[1];
-        days.add(landCounter);
-
-        System.out.println(toString(terrain));
-
+        days.add(mountainCount(terrain));
+        int changesCounter = 0;
         while (true) {
-            int temp = landCounter;
-            landCounter = flood(terrain, landCounter);
-            if (temp == landCounter) {
+            int temp = changesCounter;
+            changesCounter = flood(terrain, changesCounter);
+            if (temp == changesCounter) {
                 break;
             }
         }
+        days.add(mountainCount(terrain));
 
-        days.add(landCounter);
-
-        while (true) {
-            if (days.size() == 4) break;
-            int temp = landCounter;
+        int target = 1;
+        while (days.size() < 4) {
             System.out.println(toString(terrain));
-            landCounter = waterLevelUp(terrain, landCounter);
-            days.add(landCounter);
+            levelUp(terrain, target);
+            ++target;
+            days.add(mountainCount(terrain));
         }
+
         System.out.println(toString(terrain));
         return days.stream().mapToInt(Integer::intValue).toArray();
     }
 
-    private static int waterLevelUp(char[][] terrain, int landCounter) {
-        Set<Integer[]> waterIndexes = new HashSet<>();
+    private static void preFillingAlongContours(char[][] terrain) {
         for (int i = 0; i < terrain.length; i++) {
-            if (i == 0) {
-                boolean lineContainsWater = false;
-                Set<Integer[]> setTemnp = new HashSet<>();
-                for (int k = 0; k < terrain.length; k++) {
-                    if (terrain[0][k] == MOUNTAIN) {
-                        setTemnp.add(new Integer[]{0, k});
-                    }
-                    if (terrain[0][k] == WATER) {
-                        lineContainsWater = true;
-                    }
-                }
-                if (lineContainsWater) {
-                    waterIndexes.addAll(setTemnp);
-                }
-            }
-
             for (int j = 0; j < terrain[i].length; j++) {
-
                 if (terrain[i][j] == MOUNTAIN) {
-                    if (i > 0 && terrain[i - 1][j] == WATER) {
-                        waterIndexes.add(new Integer[]{i, j});
+                    if (i == 0 || i == terrain.length - 1 || j == 0 || j == terrain[i].length - 2) {
+                        terrain[i][j] = '1';
                     }
-                    if (i < terrain.length - 1 && terrain[i + 1][j] == WATER) {
-                        waterIndexes.add(new Integer[]{i, j});
+                    if (i > 0 && (terrain[i - 1][j] == WATER || terrain[i - 1][j] == EMPTY)) {
+                        terrain[i][j] = '1';
                     }
-                    if (j > 0 && terrain[i][j - 1] == WATER) {
-                        waterIndexes.add(new Integer[]{i, j});
+                    if (i < terrain.length - 1 && (terrain[i + 1][j] == WATER || terrain[i + 1][j] == EMPTY)) {
+                        terrain[i][j] = '1';
                     }
-                    if (i < terrain[i].length - 1 && terrain[i][j + 1] == WATER) {
-                        waterIndexes.add(new Integer[]{i, j});
+                    if (j > 0 && (terrain[i][j - 1] == WATER || terrain[i][j - 1] == EMPTY)) {
+                        terrain[i][j] = '1';
+                    }
+                    if (j < terrain[i].length - 1 && (terrain[i][j + 1] == WATER || (terrain[i][j + 1] == EMPTY))) {
+                        terrain[i][j] = '1';
                     }
                 }
             }
         }
-
-        AtomicInteger temp = new AtomicInteger(landCounter);
-        waterIndexes.forEach(index -> {
-            terrain[index[0]][index[1]] = WATER;
-            temp.decrementAndGet();
-        });
-
-        landCounter = temp.get();
-        return flood(terrain, landCounter);
+        int changesCounter = 0;
+        int value = 2;
+        while (true) {
+            int temp = changesCounter;
+            changesCounter = digitalizeTerrain(terrain, value, changesCounter);
+            if (temp == changesCounter) {
+                break;
+            }
+            ++value;
+        }
     }
 
-    private static int flood(char[][] terrain, int landCounter) {
+    private static int digitalizeTerrain(char[][] terrain, int value, int changesCounter) {
+        Set<Integer[]> indexes = new HashSet<>();
         for (int i = 0; i < terrain.length; i++) {
             for (int j = 0; j < terrain[i].length; j++) {
-                if (terrain[i][j] == WATER) {
-                    if (i > 0 && terrain[i - 1][j] == EMPTY) {
-                        terrain[i - 1][j] = WATER;
-                        --landCounter;
-                    }
-                    if (i < terrain.length - 1 && terrain[i + 1][j] == EMPTY) {
-                        terrain[i + 1][j] = WATER;
-                        --landCounter;
-                    }
-                    if (j > 0 && terrain[i][j - 1] == EMPTY) {
-                        terrain[i][j - 1] = WATER;
-                        --landCounter;
-                    }
-                    if (j < terrain[i].length - 1 && terrain[i][j + 1] == EMPTY) {
-                        terrain[i][j + 1] = WATER;
-                        --landCounter;
+                if (i > 0 && j > 0 && i < terrain.length - 1 && j < terrain[i].length - 1) {
+                    if (terrain[i][j] == MOUNTAIN) {
+                        if (terrain[i - 1][j] == Character.forDigit(value - 1, 10)) {
+                            indexes.add(new Integer[]{i, j});
+                        }
+                        if (terrain[i][j - 1] == Character.forDigit(value - 1, 10)) {
+                            indexes.add(new Integer[]{i, j});
+                        }
+                        if (terrain[i + 1][j] == Character.forDigit(value - 1, 10)) {
+                            indexes.add(new Integer[]{i, j});
+                        }
+                        if (terrain[i][j + 1] == Character.forDigit(value - 1, 10)) {
+                            indexes.add(new Integer[]{i, j});
+                        }
                     }
                 }
             }
         }
-        return landCounter;
+        indexes.forEach(index -> terrain[index[0]][index[1]] = Character.forDigit(value, 10));
+        return Math.abs(changesCounter - indexes.size());
+    }
+
+    private static void levelUp(char[][] terrain, int target) {
+        Set<Integer[]> indexes = new HashSet<>();
+        for (int i = 0; i < terrain.length; i++) {
+            for (int j = 0; j < terrain[i].length; j++) {
+                char ch = Character.forDigit(target, 10);
+                if (terrain[i][j] == ch) {
+                    if (i > 0 && i < terrain.length - 1 && j > 0 && j < terrain[i].length - 1) {
+                        if (terrain[i - 1][j] == WATER || terrain[i + 1][j] == WATER || terrain[i][j - 1] == WATER || terrain[i][j + 1] == WATER) {
+                            indexes.add(new Integer[]{i, j});
+                            if (terrain[i - 1][j] == EMPTY) {
+                                terrain[i - 1][j] = WATER;
+                            }
+                            if (terrain[i + 1][j] == EMPTY) {
+                                terrain[i + 1][j] = WATER;
+                            }
+                            if (terrain[i][j - 1] == EMPTY) {
+                                terrain[i][j - 1] = WATER;
+                            }
+                            if (terrain[i][j + 1] == EMPTY) {
+                                terrain[i][j + 1] = WATER;
+                            }
+                        }
+                    } else {
+                        indexes.add(new Integer[]{i, j});
+                    }
+
+                    indexes.add(new Integer[]{i, j});
+                }
+            }
+        }
+
+        indexes.forEach(index -> terrain[index[0]][index[1]] = WATER);
+    }
+
+    private static int flood(char[][] terrain, int changesCounter) {
+        for (int i = 0; i < terrain.length; i++) {
+            for (int j = 0; j < terrain[i].length; j++) {
+                if (terrain[i][j] == EMPTY) {
+                    if (i > 0 && terrain[i - 1][j] == WATER) {
+                        terrain[i][j] = WATER;
+                        ++changesCounter;
+                    }
+                    if (i < terrain.length - 1 && terrain[i + 1][j] == WATER) {
+                        terrain[i][j] = WATER;
+                        ++changesCounter;
+                    }
+                    if (j > 0 && terrain[i][j - 1] == WATER) {
+                        terrain[i][j] = WATER;
+                        ++changesCounter;
+                    }
+                    if (j < terrain[i].length - 1 && terrain[i][j + 1] == WATER) {
+                        terrain[i][j] = WATER;
+                        ++changesCounter;
+                    }
+                }
+            }
+        }
+        return changesCounter;
     }
 
     public static void main(String[] args) {
@@ -156,7 +200,7 @@ public class Dinglemouse {
         return sb.toString();
     }
 
-    private static int[] cellCount(char[][] terrain) {
+    private static int mountainCount(char[][] terrain) {
         int cellsCounter = 0;
         int waterCellsCounter = 0;
         for (char[] line : terrain) {
@@ -167,6 +211,6 @@ public class Dinglemouse {
                 }
             }
         }
-        return new int[]{cellsCounter, waterCellsCounter};
+        return Math.abs(cellsCounter - waterCellsCounter);
     }
 }
