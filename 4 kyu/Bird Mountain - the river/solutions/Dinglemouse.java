@@ -10,14 +10,10 @@ public class Dinglemouse {
     public static int[] dryGround(char[][] terrain) {
         preFillingAlongContours(terrain);
         int[] days = new int[4];
-        if (terrain == null || terrain.length == 0) {
+        if (terrain.length == 0) {
             Arrays.fill(days, 0);
             return days;
         }
-
-        System.out.println(":: DAY 0 ::");
-        System.out.println(toString(terrain));
-        System.out.println("\n");
 
         days[0] = groundLeft(terrain);
         if (days[0] == terrain.length * terrain[0].length) {
@@ -26,21 +22,10 @@ public class Dinglemouse {
         }
 
         flood(terrain);
-        days[1] = groundLeft(terrain);
-
-        for (int i = 2; i < 4; i++) {
-            System.out.println(String.format(":: DAY %d ::", i - 1));
-            System.out.println(toString(terrain));
-            System.out.println("\n");
+        for (int i = 1; i < 4; i++) {
             waterLevelUp(terrain, i - 1);
-            flood(terrain);
             days[i] = groundLeft(terrain);
         }
-
-
-        System.out.println(":: DAY 3 ::");
-        System.out.println(toString(terrain));
-
 
         return days;
     }
@@ -52,25 +37,33 @@ public class Dinglemouse {
             for (int j = 0; j < terrain[i].length; j++) {
                 if (terrain[i][j] == WATER) {
                     try {
-                        if (i > 0 && terrain[i - 1][j] == Character.forDigit(value, 10)) {
+                        char ch = Character.forDigit(value, 10);
+                        if (i > 0 && terrain[i - 1][j] == ch) {
                             terrain[i - 1][j] = WATER;
                             ++changeCounter;
                         }
-                        if (i < terrain.length - 1 && terrain[i + 1][j] == Character.forDigit(value, 10)) {
+                        if (i < terrain.length - 1 && terrain[i + 1][j] == ch) {
                             terrain[i + 1][j] = WATER;
                             ++changeCounter;
                         }
-                        if (j > 0 && terrain[i][j - 1] == Character.forDigit(value, 10)) {
+                        if (j > 0 && terrain[i][j - 1] == ch) {
                             terrain[i][j - 1] = WATER;
                             ++changeCounter;
                         }
-                        if (j < terrain[i].length && terrain[i][j + 1] == Character.forDigit(value, 10)) {
+                        if (j < terrain[i].length && terrain[i][j + 1] == ch) {
                             terrain[i][j + 1] = WATER;
                             ++changeCounter;
                         }
-                    } catch (Exception e) {
-
-                    }
+                    } catch (Exception e) {}
+                }
+                if (Character.isDigit(terrain[i][j]) && Character.getNumericValue(terrain[i][j]) <= value) {
+                    try {
+                        if ((i > 0 && terrain[i - 1][j] == WATER) || (i < terrain.length - 1 && terrain[i + 1][j] == WATER) ||
+                                (j > 0 && terrain[i][j - 1] == WATER) || (j < terrain[i].length && terrain[i][j + 1] == WATER)) {
+                            terrain[i][j] = WATER;
+                            ++changeCounter;
+                        }
+                    } catch (Exception e) {}
                 }
             }
         }
@@ -84,22 +77,11 @@ public class Dinglemouse {
     private static void preFillingAlongContours(char[][] terrain) {
         for (int i = 0; i < terrain.length; i++) {
             for (int j = 0; j < terrain[i].length; j++) {
-                if (terrain[i][j] == MOUNTAIN) {
-                    if (i == 0 || i == terrain.length - 1 || j == 0 || j == terrain[i].length - 1) {
-                        terrain[i][j] = '1';
-                    }
-                    if (i > 0 && (terrain[i - 1][j] == WATER || terrain[i - 1][j] == EMPTY)) {
-                        terrain[i][j] = '1';
-                    }
-                    if (i < terrain.length - 1 && (terrain[i + 1][j] == WATER || terrain[i + 1][j] == EMPTY)) {
-                        terrain[i][j] = '1';
-                    }
-                    if (j > 0 && (terrain[i][j - 1] == WATER || terrain[i][j - 1] == EMPTY)) {
-                        terrain[i][j] = '1';
-                    }
-                    if (j < terrain[i].length - 1 && (terrain[i][j + 1] == WATER || (terrain[i][j + 1] == EMPTY))) {
-                        terrain[i][j] = '1';
-                    }
+                if (terrain[i][j] == MOUNTAIN &&
+                        (i == 0 || i == terrain.length - 1 || j == 0 || j == terrain[i].length - 1 || terrain[i - 1][j] == WATER || terrain[i - 1][j] == EMPTY ||
+                                i < terrain.length - 1 && (terrain[i + 1][j] == WATER || terrain[i + 1][j] == EMPTY) || terrain[i][j - 1] == WATER ||
+                                terrain[i][j - 1] == EMPTY || j < terrain[i].length - 1 && (terrain[i][j + 1] == WATER || terrain[i][j + 1] == EMPTY))) {
+                    terrain[i][j] = '1';
                 }
             }
         }
@@ -120,19 +102,11 @@ public class Dinglemouse {
         for (int i = 0; i < terrain.length; i++) {
             for (int j = 0; j < terrain[i].length; j++) {
                 if (i > 0 && j > 0 && i < terrain.length - 1 && j < terrain[i].length - 1) {
-                    if (terrain[i][j] == MOUNTAIN) {
-                        if (terrain[i - 1][j] == Character.forDigit(value - 1, 10)) {
-                            indexes.add(new Integer[]{i, j});
-                        }
-                        if (terrain[i][j - 1] == Character.forDigit(value - 1, 10)) {
-                            indexes.add(new Integer[]{i, j});
-                        }
-                        if (terrain[i + 1][j] == Character.forDigit(value - 1, 10)) {
-                            indexes.add(new Integer[]{i, j});
-                        }
-                        if (terrain[i][j + 1] == Character.forDigit(value - 1, 10)) {
-                            indexes.add(new Integer[]{i, j});
-                        }
+                    if (terrain[i][j] == MOUNTAIN && ((terrain[i - 1][j] == Character.forDigit(value - 1, 10)) ||
+                            (terrain[i][j - 1] == Character.forDigit(value - 1, 10)) ||
+                            (terrain[i + 1][j] == Character.forDigit(value - 1, 10)) ||
+                            (terrain[i][j + 1] == Character.forDigit(value - 1, 10)))) {
+                        indexes.add(new Integer[]{i, j});
                     }
                 }
             }
@@ -146,23 +120,10 @@ public class Dinglemouse {
         int temp = counter;
         for (int i = 0; i < terrain.length; i++) {
             for (int j = 0; j < terrain[i].length; j++) {
-                if (terrain[i][j] == EMPTY) {
-                    if (i > 0 && terrain[i - 1][j] == WATER) {
-                        terrain[i][j] = WATER;
-                        ++counter;
-                    }
-                    if (i < terrain.length - 1 && terrain[i + 1][j] == WATER) {
-                        terrain[i][j] = WATER;
-                        ++counter;
-                    }
-                    if (j > 0 && terrain[i][j - 1] == WATER) {
-                        terrain[i][j] = WATER;
-                        ++counter;
-                    }
-                    if (j < terrain[i].length - 1 && terrain[i][j + 1] == WATER) {
-                        terrain[i][j] = WATER;
-                        ++counter;
-                    }
+                if (terrain[i][j] == EMPTY && ((i > 0 && terrain[i - 1][j] == WATER) || (i < terrain.length - 1 && terrain[i + 1][j] == WATER) ||
+                        (j > 0 && terrain[i][j - 1] == WATER || (j < terrain[i].length - 1 && terrain[i][j + 1] == WATER)))) {
+                    terrain[i][j] = WATER;
+                    ++counter;
                 }
             }
         }
@@ -181,207 +142,5 @@ public class Dinglemouse {
             }
         }
         return ground - waterCellsCounter;
-    }
-
-    private static String toString(char[][] terrain) {
-        StringBuilder sb = new StringBuilder();
-        for (char[] chars : terrain) {
-            for (char ch : chars) {
-                sb.append(ch);
-            }
-            sb.append("\n");
-        }
-        return sb.toString();
-    }
-
-    public static void main(String[] args) {
-        char[][] terrainOne = {
-                "  ^^^^^^             ".toCharArray(),
-                "^^^^^^^^       ^^^   ".toCharArray(),
-                "^^^^^^^  ^^^         ".toCharArray(),
-                "^^^^^^^  ^^^         ".toCharArray(),
-                "^^^^^^^  ^^^         ".toCharArray(),
-                "---------------------".toCharArray(),
-                "^^^^^                ".toCharArray(),
-                "   ^^^^^^^^  ^^^^^^^ ".toCharArray(),
-                "^^^^^^^^     ^     ^ ".toCharArray(),
-                "^^^^^        ^^^^^^^ ".toCharArray()
-        };
-        System.out.println(Arrays.toString(dryGround(terrainOne))); // [189, 99, 19, 3]
-        System.out.println("\n");
-        System.out.println("\n");
-
-
-        char[][] wall = {
-                "-------------------------".toCharArray(),
-                "                         ".toCharArray(),
-                "       ^^^^^^^^^^^^^^^^^^".toCharArray(),
-                "       ^^^^^^^^^^^^^^^^^^".toCharArray(),
-                "       ^^^^^^^^^^^^^^^^^^".toCharArray(),
-                "       ^^^^^        ^^^^^".toCharArray(),
-                "       ^^^^^        ^^^^^".toCharArray(),
-                "       ^^^^^^^^^^^^^^^^^^".toCharArray(),
-                "       ^^^^^^^^^^^^^^^^^^".toCharArray(),
-                "       ^^^^^^^^^^^^^^^^^^".toCharArray()
-        };
-        System.out.println(Arrays.toString(dryGround(wall))); // [235, 144, 60, 12]
-        System.out.println("\n");
-        System.out.println("\n");
-
-
-        char[][] flashFlood = {
-                "^^^^^^^^^^^^^^^^^^^^^^^^^^^^".toCharArray(),
-                "----------------------------".toCharArray(),
-                "^^^^^^^^^^^^^^^^^^^^^^^^^^^^".toCharArray(),
-                "^^^^ ^^^^^^^^ ^^^^^^^^^ ^^^^".toCharArray(),
-                "^^^^ ^^  ^  ^  ^  ^  ^^ ^^^^".toCharArray(),
-                "^^^^ ^^  ^  ^  ^  ^  ^^ ^^^^".toCharArray(),
-                "^^^^ ^^  ^  ^  ^  ^  ^^ ^^^^".toCharArray(),
-                "^^^^ ^^  ^  ^  ^  ^  ^^ ^^^^".toCharArray(),
-                "^^^^ ^^  ^  ^  ^  ^  ^^ ^^^^".toCharArray(),
-                "^^^^ ^^  ^  ^  ^  ^  ^^ ^^^^".toCharArray(),
-                "^^^^ ^^  ^  ^  ^  ^  ^^ ^^^^".toCharArray(),
-                "^^^^ ^^  ^  ^  ^  ^  ^^ ^^^^".toCharArray(),
-                "^^^^ ^^  ^  ^  ^  ^  ^^ ^^^^".toCharArray(),
-                "^^^^ ^^  ^  ^  ^  ^  ^^ ^^^^".toCharArray(),
-                "^^^^^^^^^^^^^^^^^^^^^^^^^^^^".toCharArray(),
-                "^^^^^^^^^^^^^^^^^^^^^^^^^^^^".toCharArray()
-        };
-        System.out.println(Arrays.toString(dryGround(flashFlood)));
-        System.out.println("\n");
-        System.out.println("\n");
-
-
-        char[][] random = {
-                "           ^^^^^    ".toCharArray(),
-                "--------------------".toCharArray(),
-                " ^^^^    ^^^^^  ^^^^".toCharArray(),
-                " ^^^^^   ^^^^   ^^^^".toCharArray(),
-                "         ^^^^^  ^^^^".toCharArray(),
-                "               ^^^^^".toCharArray(),
-                "^^^^^^^^^^     ^^^^ ".toCharArray(),
-                "^^^^^^^^^   ^^^^^^^^".toCharArray(),
-                "^^^^^^^^^^  ^^^^    ".toCharArray(),
-                " ^^^^^^^^^^^^^^^^   ".toCharArray(),
-                "  ^^^^^  ^^^^^      ".toCharArray(),
-        };
-        System.out.println(Arrays.toString(dryGround(random)));
-        System.out.println("\n");
-        System.out.println("\n");
-
-
-        char[][] twinPeaks = {
-                "^^^^^       ".toCharArray(),
-                "^^^^^       ".toCharArray(),
-                "^^^^^       ".toCharArray(),
-                "------------".toCharArray(),
-                "     ^^^^^^^".toCharArray(),
-                "     ^^^^^^^".toCharArray(),
-                "     ^^^^^^^".toCharArray(),
-                "     ^^^^^^^".toCharArray(),
-                "     ^^^^^^^".toCharArray(),
-                "     ^^^^^^^".toCharArray(),
-                "     ^^^^^^^".toCharArray()
-        };
-        System.out.println(Arrays.toString(dryGround(twinPeaks)));
-        System.out.println("\n");
-        System.out.println("\n");
-
-
-        char[][] lake = {
-                "^^^^^^^^^^^^^^^^^^^^^^^^^^^^".toCharArray(),
-                "^^^^^^^^^^^^^^^^^^^^^^^^^^^^".toCharArray(),
-                "^^^^^^^^^^^^^^^^^^^^^^^^^^^^".toCharArray(),
-                "^^^^^^^^^^^^^^^^^^^^^^^^^^^^".toCharArray(),
-                "^^^^^^^^^^^^^^^^^^^^^^^^^^^^".toCharArray(),
-                "^^^^^^^^^^^^^-----^^^^^^^^^^".toCharArray(),
-                "^^^^^^^^^^^^^-----^^^^^^^^^^".toCharArray(),
-                "------------------^^^^^^^^^^".toCharArray(),
-                "^^^^^^^^^^^^^-----^^^^^^^^^^".toCharArray(),
-                "^^^^^^^^^^^^^-----^^^^^^^^^^".toCharArray(),
-                "^^^^^^^^^^^^^^^^^^^^^^^^^^^^".toCharArray(),
-                "^^^^^^^^^^^^^^^^^^^^^^^^^^^^".toCharArray(),
-                "^^^^^^^^^^^^^^^^^^^^^^^^^^^^".toCharArray(),
-                "^^^^^^^^^^^^^^^^^^^^^^^^^^^^".toCharArray(),
-                "^^^^^^^^^^^^^^^^^^^^^^^^^^^^".toCharArray()
-        };
-        System.out.println(Arrays.toString(dryGround(lake)));
-        System.out.println("\n");
-        System.out.println("\n");
-
-
-        char[][] dryMountain = {
-                "^^^^^^^^^^".toCharArray(),
-                "^^^^^^^^^^".toCharArray(),
-                "^^^^^^^^^^".toCharArray(),
-                "^^^^^^^^^^".toCharArray(),
-                "^^^^^^^^^^".toCharArray(),
-                "^^^^^^^^^^".toCharArray(),
-        };
-        System.out.println(Arrays.toString(dryGround(dryMountain)));
-        System.out.println("\n");
-        System.out.println("\n");
-
-
-        char[][] levee = {
-                "^^^^^^^^^^^^^^^^^^^^".toCharArray(),
-                "^^^^^^^^^^^^^^^^^^^^".toCharArray(),
-                "^^^^^^^^^^^^^^^^^^^^".toCharArray(),
-                "--------------------".toCharArray(),
-                "^^^^^^^^^^^^^^^^^^^^".toCharArray(),
-                "^^^^^^^^^^^^^^^^^^^^".toCharArray(),
-                "^^^^^^^^^^^^^^^^^^^^".toCharArray()
-        };
-        System.out.println(Arrays.toString(dryGround(levee)));
-        System.out.println("\n");
-        System.out.println("\n");
-
-
-        char[][] swamp = {
-                "----------".toCharArray(),
-                "----------".toCharArray(),
-                "----------".toCharArray(),
-                "----------".toCharArray(),
-                "----------".toCharArray(),
-                "----------".toCharArray()
-        };
-        System.out.println(Arrays.toString(dryGround(swamp)));
-        System.out.println("\n");
-        System.out.println("\n");
-
-
-        char[][] volcano = {
-                "---------------------".toCharArray(),
-                "      ^^^^^^^^^      ".toCharArray(),
-                "    ^^^^^^^^^^^^^    ".toCharArray(),
-                "  ^^^^^^^^^^^^^^^^^  ".toCharArray(),
-                " ^^^^^^^     ^^^^^^^ ".toCharArray(),
-                "^^^^^^^       ^^^^^^^".toCharArray(),
-                "^^^^^^^       ^^^^^^^".toCharArray(),
-                "^^^^^^^       ^^^^^^^".toCharArray(),
-                " ^^^^^^^     ^^^^^^^ ".toCharArray(),
-                "  ^^^^^^^^^^^^^^^^^  ".toCharArray(),
-                "    ^^^^^^^^^^^^^    ".toCharArray(),
-                "      ^^^^^^^^^      ".toCharArray()
-        };
-        System.out.println(Arrays.toString(dryGround(volcano)));
-        System.out.println("\n");
-        System.out.println("\n");
-
-
-        char[][] islandsInTheStream = {
-                "^^^^^^^^^^^^^^^^^^^^^^^^^^^^".toCharArray(),
-                "^^^^^^^^^^^^^^^^^^^^^^^^^^^^".toCharArray(),
-                "^^^^^^^^^^^^^^^^^^^^^^^^^^^^".toCharArray(),
-                "----------------------------".toCharArray(),
-                "---     ---   ---   ^ ------".toCharArray(),
-                "----------------------------".toCharArray(),
-                "^^^^^^^^^^^^^^^^^^^^^^^^^^^^".toCharArray(),
-                "^^^^^^^^^^^^^^^^^^^^^^^^^^^^".toCharArray(),
-                "^^^^^^^^^^^^^^^^^^^^^^^^^^^^".toCharArray(),
-        };
-        System.out.println(Arrays.toString(dryGround(islandsInTheStream)));
-        System.out.println("\n");
-        System.out.println("\n");
     }
 }
